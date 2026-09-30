@@ -1,0 +1,131 @@
+{
+  "source": "synthetic",
+  "seed": 42,
+  "rows": 60000,
+  "raw_rows": 60000,
+  "duplicates_removed": 0,
+  "fraud_count": 617,
+  "fraud_rate": 0.010283333333333334,
+  "features": [
+    "amount",
+    "account_age_days",
+    "transactions_1h",
+    "distance_km",
+    "new_device",
+    "new_merchant",
+    "hour",
+    "international",
+    "amount_to_median",
+    "failed_attempts_24h"
+  ],
+  "selected_model": "logistic",
+  "selection_rule": "Highest validation recall at a validation-derived 1% review target; AP breaks ties.",
+  "split": {
+    "train": {
+      "rows": 36000,
+      "fraud": 326,
+      "time_start": 0.0,
+      "time_end": 155515.68
+    },
+    "calibration": {
+      "rows": 6000,
+      "fraud": 72,
+      "time_start": 155520.0,
+      "time_end": 181435.68
+    },
+    "validation": {
+      "rows": 6000,
+      "fraud": 75,
+      "time_start": 181440.0,
+      "time_end": 207355.68
+    },
+    "test": {
+      "rows": 12000,
+      "fraud": 144,
+      "time_start": 207360.0,
+      "time_end": 259195.68
+    }
+  },
+  "environment": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "scikit_learn": "1.6.1"
+  },
+  "data_sha256": "c5ff54631c3c6194d349aaf64a6dc27195b01f99824783b401c04641f0ed2cdc",
+  "models": {
+    "logistic": {
+      "validation_ap": 0.0990285049019529,
+      "validation_policy": {
+        "tp": 9,
+        "fp": 51,
+        "fn": 66,
+        "tn": 5874,
+        "reviewed": 60,
+        "precision": 0.15,
+        "recall": 0.12,
+        "review_rate": 0.01,
+        "flagged_fraud_amount": 522.6,
+        "missed_fraud_amount": 5100.26
+      },
+      "test_ap": 0.09174057363297924,
+      "test_roc_auc": 0.7911752371045134,
+      "test_brier": 0.011385941538216354,
+      "threshold": 0.1138555455755964,
+      "test_policy": {
+        "tp": 22,
+        "fp": 72,
+        "fn": 122,
+        "tn": 11784,
+        "reviewed": 94,
+        "precision": 0.23404255319148937,
+        "recall": 0.1527777777777778,
+        "review_rate": 0.007833333333333333,
+        "flagged_fraud_amount": 1434.7699999999998,
+        "missed_fraud_amount": 7671.47
+      },
+      "test_recall_interval": [
+        0.09722222222222222,
+        0.2152777777777778
+      ],
+      "training_seconds": 0.021
+    },
+    "boosting": {
+      "validation_ap": 0.08848686245727627,
+      "validation_policy": {
+        "tp": 9,
+        "fp": 51,
+        "fn": 66,
+        "tn": 5874,
+        "reviewed": 60,
+        "precision": 0.15,
+        "recall": 0.12,
+        "review_rate": 0.01,
+        "flagged_fraud_amount": 717.4599999999999,
+        "missed_fraud_amount": 4905.400000000001
+      },
+      "test_ap": 0.08735378392088392,
+      "test_roc_auc": 0.7600274474246513,
+      "test_brier": 0.011479890485364621,
+      "threshold": 0.08783100058413096,
+      "test_policy": {
+        "tp": 17,
+        "fp": 87,
+        "fn": 127,
+        "tn": 11769,
+        "reviewed": 104,
+        "precision": 0.16346153846153846,
+        "recall": 0.11805555555555555,
+        "review_rate": 0.008666666666666666,
+        "flagged_fraud_amount": 1456.19,
+        "missed_fraud_amount": 7650.050000000002
+      },
+      "test_recall_interval": [
+        0.0625,
+        0.1736111111111111
+      ],
+      "training_seconds": 1.528
+    }
+  },
+  "total_seconds": 1.696
+}
